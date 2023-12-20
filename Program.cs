@@ -4,8 +4,12 @@ using System.Text;
 namespace WordCounter {
         class Program {
             static void Main(){
+
+            string src = "input.txt";
+
+            string dest = "output.csv";
             
-            string inputString = File.ReadAllText("input.txt");
+            string inputString = File.ReadAllText(src);
 
             System.Console.Write("Insert a word to count: ");
             string wordToSeek = Console.ReadLine();
@@ -28,7 +32,7 @@ namespace WordCounter {
             var newLine = string.Format("{0},{1},{2}", wordToSeek, wordCount, frequency);
             csv.AppendLine(newLine);  
 
-            File.WriteAllText("output.csv", csv.ToString());
+            File.WriteAllText(dest, csv.ToString());
     
             }
 
